@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 44 44% 97%;
+    --foreground: 160 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 160 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 30% 12%;
+    --primary: 158 42% 24%;
+    --primary-foreground: 44 44% 97%;
+    --secondary: 40 38% 92%;
+    --secondary-foreground: 160 30% 12%;
+    --muted: 40 30% 93%;
+    --muted-foreground: 155 12% 40%;
+    --accent: 33 78% 57%;
+    --accent-foreground: 160 30% 12%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 20% 86%;
+    --input: 40 20% 86%;
+    --ring: 158 42% 24%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 160 30% 8%;
+    --foreground: 44 30% 92%;
+    --card: 160 28% 11%;
+    --card-foreground: 44 30% 92%;
+    --popover: 160 28% 11%;
+    --popover-foreground: 44 30% 92%;
+    --primary: 158 42% 24%;
+    --primary-foreground: 44 44% 97%;
+    --secondary: 160 20% 16%;
+    --secondary-foreground: 44 30% 92%;
+    --muted: 160 20% 16%;
+    --muted-foreground: 160 10% 55%;
+    --accent: 33 78% 57%;
+    --accent-foreground: 160 30% 12%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 160 20% 20%;
+    --input: 160 20% 20%;
+    --ring: 33 78% 57%;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .progress-fill {
+    transition: width 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .font-arabic {
+    font-family: "Amiri", "Fraunces", Georgia, serif;
+  }
+  .islamic-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='1'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z'/%3E%3Cpath d='M30 15L45 30L30 45L15 30Z'/%3E%3Ccircle cx='30' cy='30' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .islamic-pattern-dark {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2316352c' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z'/%3E%3Cpath d='M30 15L45 30L30 45L15 30Z'/%3E%3Ccircle cx='30' cy='30' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
